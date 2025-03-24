@@ -1,17 +1,10 @@
-import React, { Suspense } from 'react';
-import CachedComponent from '@/components/CachedComponent';
-import { revalidateData } from '@/data/data';
+import React from 'react';
 
 export default function RootPage() {
   return (
-    <div>
-      Hello world
-      <Suspense fallback={<div>Loading...</div>}>
-        <CachedComponent />
-      </Suspense>
-      <form action={revalidateData}>
-        <button type="submit">Revalidate</button>
-      </form>
+    <div className="flex flex-col gap-4">
+      <a href="with-suspense">With Suspense</a>
+      <a href="without-suspense">Without Suspense</a>
     </div>
   );
 }
